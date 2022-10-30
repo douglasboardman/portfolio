@@ -178,19 +178,6 @@ nav {display: none;}
     margin: 0 auto;
 }
 
-@media (min-width: 800px){
-    .services {
-        display: flex;
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .service + .service {
-        margin-left: 2em;
-    }
-}
-
 /* About me section */
 
 .about-me {
@@ -204,9 +191,37 @@ nav {display: none;}
 
 /* Section My Work */
 
+.my-work {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;
+}
 
+.my-work-section-subtitle {
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-bottom: 2em;
+}
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
 
 /* MEDIA QUERIES */
+
+@media (min-width: 800px){
+    .services {
+        display: flex;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .service + .service {
+        margin-left: 2em;
+    }
+}
 
 @media (min-width: 600px) {
     .about-me {
