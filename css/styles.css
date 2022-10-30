@@ -15,7 +15,7 @@
 
     --clr-light: #fff;
     --clr-dark: #303030;
-    --clr-accent: #16e0bd;
+    --clr-accent: #ff5757;
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -37,7 +37,7 @@ strong {
 
 .btn {
     display: inline-block;
-    padding: 2.5em 1.5em;
+    padding: .8em 1.5em;
     background: var(--clr-accent);
     color: var(--clr-dark);
     text-decoration: none;
@@ -120,6 +120,7 @@ h3 { font-size: var(--fs-h3)}
     font-family: var(--ff-secondary);
     margin-bottom: 1em;
 }
+
 /* header */
 
 nav {display: none;}
@@ -168,6 +169,10 @@ nav {display: none;}
     opacity: 0.25;
 }
 
+.services {
+    margin-bottom: 4em;
+}
+
 .service {
     max-width: 500px;
     margin: 0 auto;
@@ -177,7 +182,8 @@ nav {display: none;}
     .services {
         display: flex;
         max-width: 1000px;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .service + .service {
@@ -185,7 +191,54 @@ nav {display: none;}
     }
 }
 
+/* About me section */
+
+.about-me {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-me-img {
+    box-shadow: var(--bs);
+}
+
+/* Section My Work */
+
+
+
 /* MEDIA QUERIES */
+
+@media (min-width: 600px) {
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 250px;
+        grid-template-areas: 
+            "title img"
+            "subtitle img"
+            "text img";
+        grid-column-gap: 1em;
+    }
+
+    .about-section-title {
+        grid-area: title;
+    }
+
+    .about-section-subtitle {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100% + 4em);
+        padding-left: 1em;
+        padding-right: calc(200px + 4em);
+    }
+
+    .about-me-img {
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+    }
+}
 
 @media (max-width: 840px){
     :root {
